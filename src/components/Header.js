@@ -5,7 +5,7 @@ const Header = (props) => (
 );
 
 Header.defaultProps = {
-    title: 'Header'
+    title: 'Real Time Search'
 };
 
 export default Header;

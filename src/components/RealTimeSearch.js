@@ -2,6 +2,8 @@ import React from 'react';
 import Header from './Header';
 import List from './List';
 import Search from './Search';
+import Grid from '@material-ui/core/Grid';
+import Paper from '@material-ui/core/Paper';
 
 export default class RealTimeSearch extends React.Component {
     state = {
@@ -24,10 +26,21 @@ export default class RealTimeSearch extends React.Component {
     render() {
         return (
             <div>
-                <Header />
-                <Search handleContains={this.handleContains} />
-                <List list={this.state.searchedItems} />
+                <Grid
+                    container
+                    direction="column"
+                    justify="center"
+                    alignItems="center"
+                >
+                    <Paper style={{padding: 20, margin: 20}}>
+                        <Header />
+                    </Paper>
+                    <Paper style={{padding: 20}}>
+                        <Search handleContains={this.handleContains} />
+                        <List list={this.state.searchedItems} />
+                    </Paper>
+                </Grid>
             </div>
-        );
-    };
+                );
+            };
 };
